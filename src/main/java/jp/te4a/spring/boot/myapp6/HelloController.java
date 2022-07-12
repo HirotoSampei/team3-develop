@@ -3,6 +3,7 @@ package jp.te4a.spring.boot.myapp6;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloController {
     @Autowired
     BookService bookService;
-    @RequestMapping("/main")
+    @GetMapping("/main")
     public String index(Model model) {
         model.addAttribute("msg", "this is setting message");
         return "index";
